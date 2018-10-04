@@ -51,10 +51,10 @@ pin = PiPiper::Pin.new(:pin => 17, :direction => :out)
 pin.off
 
 loop do
-  print "Enter message(':QUIT' to exit): "
+  print "Enter message('#QUIT' to exit): "
   message = gets.chomp.downcase
 
-  break if message == ":quit"
+  break if message == "#quit"
 
   message.each_char do |letter|
     if letter == " "
