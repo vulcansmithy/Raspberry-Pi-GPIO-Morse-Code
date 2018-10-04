@@ -59,15 +59,18 @@ loop do
       pin.off
       sleep medium_gap
     else
-      character_timing[letter].each do |timing| 
-        pin.on
-        sleep timing
-        pin.off
-        sleep inter_element_gap
-      end
-      sleep short_gap - inter_element_gap
+      unless character_timing[letter].nil?
+        print "Coding '#{letter}'... "
+        character_timing[letter].each do |timing| 
+          pin.on
+          sleep timing
+          pin.off
+          sleep inter_element_gap
+        end
+        sleep short_gap - inter_element_gap
       
-      puts "Coding '#{letter}'"
+        puts "Done."
+      end
     end
   end
 
