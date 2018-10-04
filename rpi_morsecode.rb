@@ -66,6 +66,8 @@ loop do
         sleep inter_element_gap
       end
       sleep short_gap - inter_element_gap
+      
+      puts "Coding '#{letter}'"
     end
   end
 
